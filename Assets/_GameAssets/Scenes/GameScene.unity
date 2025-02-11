@@ -1221,6 +1221,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1461832228}
   - component: {fileID: 1461832229}
+  - component: {fileID: 1461832230}
+  - component: {fileID: 1461832231}
   - component: {fileID: 1461832227}
   - component: {fileID: 1461832226}
   m_Layer: 0
@@ -1314,6 +1316,8 @@ MonoBehaviour:
   playerspeed: 30
   _JumpKey: 32
   _JumpForce: 8
+  _airMultiplier: 0.2
+  _airDrag: 0.75
   _canJump: 1
   _jumpCoolDown: 0.5
   _playerHeight: 1
@@ -1324,6 +1328,31 @@ MonoBehaviour:
   _slideKey: 113
   _slideMultiplier: 2
   _slideDrag: 2
+--- !u!114 &1461832230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461832225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0ebd59583244848879e6a9caffcd50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1461832231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461832225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 006f35f9d56dbe94cbd93a52ff30aafd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerAnimator: {fileID: 4611526700343050669}
 --- !u!1 &1499956095
 GameObject:
   m_ObjectHideFlags: 0
@@ -2282,6 +2311,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3797871171041303318}
+  - component: {fileID: 4611526700343050669}
   m_Layer: 0
   m_Name: PlayerVisual
   m_TagString: Untagged
@@ -2289,6 +2319,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &4611526700343050669
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4611526700343050668}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0f4d84c15e5637f459f5b80cd4203531, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4663811201183870491
 GameObject:
   m_ObjectHideFlags: 0

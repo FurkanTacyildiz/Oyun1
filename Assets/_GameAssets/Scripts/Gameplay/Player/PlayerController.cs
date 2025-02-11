@@ -1,10 +1,13 @@
 using Unity.VisualScripting;
+using System;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
+    public event Action OnPlayerJump;
+
     [Header("References")]
     [SerializeField] private Transform _orientationTransform;
     [Header("Movement Settings")]
@@ -42,6 +45,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         
 
     }
+   
     void Update()
     {
         setInputs();
@@ -138,6 +142,8 @@ public class NewMonoBehaviourScript : MonoBehaviour
     }
     private void SetPlayerJumping()
     {
+        OnPlayerJump?.Invoke();
+        
         _playerRigidbody.linearVelocity = new Vector3(_playerRigidbody.linearVelocity.x,0f,_playerRigidbody.linearVelocity.z);
         _playerRigidbody.AddForce(transform.up*_JumpForce,ForceMode.Impulse);
     }
